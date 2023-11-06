@@ -5,7 +5,7 @@ import java.time.Period;
 
 public class Jugador extends Persona {
      private final LocalDate fechaNacimiento;
-     private final Genero genero;
+     private final Genero genero; // Definir funcion de elegir genero
 
     
 
