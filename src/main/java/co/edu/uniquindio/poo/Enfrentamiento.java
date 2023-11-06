@@ -6,16 +6,18 @@ import java.util.ArrayList;
 public class Enfrentamiento {
     private final String lugar;
     private final LocalDate fechaHora;
-    private final Equipo equipos;
+    private String equipoLocal;
+    private String equipoVisitante;
     private final ArrayList<Integer> juez;
     private final int resultado;
     private final Estados estados;
     
-    public Enfrentamiento(String lugar, LocalDate fechaHora, Equipo equipos, ArrayList<Integer> juez, int resultado,
+    public Enfrentamiento(String lugar, LocalDate fechaHora, String equipoLocal, String equipoVisitante, ArrayList<Integer> juez, int resultado,
             Estados estados) {
         this.lugar = lugar;
         this.fechaHora = fechaHora;
-        this.equipos = equipos;
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
         this.juez = juez;
         this.resultado = resultado;
         this.estados = estados;
@@ -29,8 +31,20 @@ public class Enfrentamiento {
         return fechaHora;
     }
 
-    public Equipo getEquipos() {
-        return equipos;
+    public String getEquipoLocal() {
+        return equipoLocal;
+    }
+
+    public void setEquipoLocal(String equipoLocal) {
+        this.equipoLocal = equipoLocal;
+    }
+
+    public String getEquipoVisitante() {
+        return equipoVisitante;
+    }
+
+    public void setEquipoVisitante(String equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
     }
 
     public ArrayList<Integer> getJuez() {
@@ -44,5 +58,8 @@ public class Enfrentamiento {
     public Estados getEstados() {
         return estados;
     }
+
+
+
     
 }

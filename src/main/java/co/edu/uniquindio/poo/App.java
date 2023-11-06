@@ -27,6 +27,9 @@ public class App {
                 int numeroParticipantes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de participantes"));
                 int valorInscripcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor de la inscripcion"));
                 int edadLimite = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad limite"));
+                int juecesPorPartido = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces por partido"));
+                int juecesTotales = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces totales"));
+                
                 genero = JOptionPane.showInputDialog("Ingrese el genero del torneo, entre Masculino, Femenino y Mixto");
                 tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local");
 
@@ -61,11 +64,17 @@ public class App {
                 }
                 }
 
-                Torneo current = new Torneo(nombre, fechaInicio, fechaInicioInscripciones, fechaFinalInscripciones, numeroParticipantes, edadLimite, valorInscripcion, tipo, genero);
+                Torneo current = new Torneo(nombre, fechaInicio, fechaInicioInscripciones, fechaFinalInscripciones, numeroParticipantes, edadLimite, valorInscripcion, tipo, genero, juecesPorPartido, juecesTotales);
                 current.llenarEquipos();
 
         
                 decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar equipo"));
+            }
+
+            if(decision == 2){
+
+
+                
             }
 
             

@@ -19,10 +19,11 @@ public class Torneo {
     public int totalJueces;
         
     ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
+    ArrayList<Enfrentamiento> enfrentamientos = new ArrayList();
 
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
-            String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
-            String tipoTorneo, String genero) {
+        String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
+        String tipoTorneo, String genero, int juecesPorPartido, int totalJueces) {
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
         this.fechaInicioInscripciones = fechaInicioInscripciones;
@@ -32,6 +33,8 @@ public class Torneo {
         this.valorInscripcion = valorInscripcion;
         this.tipoTorneo = tipoTorneo;
         this.genero = genero;
+        this.juecesPorPartido = juecesPorPartido;
+        this.totalJueces = totalJueces;
     }
    
     public String getNombre() {
@@ -119,6 +122,25 @@ public class Torneo {
             
             }
             
+        }
+
+        // Se crean los enfrentamientos de una vez.
+        public void crearEnfrentamientos(){
+
+            int index;
+            for ( index = 0; index < (equipos.size() - 1); index++) {
+                
+
+                String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento");
+                String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");
+                String local = equipos.get(index).getNombre();
+                String visita = equipos.get(index + 1).getNombre();
+
+
+
+
+            }
+
         }
     }
 
