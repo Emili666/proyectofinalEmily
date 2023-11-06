@@ -32,61 +32,8 @@ public class Torneo {
 
 
     }
-
-
-
-    
-
-
-
    
 
-<<<<<<< HEAD
-=======
-
-
-    public LocalDate getFechaInicioInscripciones() {
-        return fechaInicioInscripciones;
-    }
-
-
-
-    public LocalDate getFechaCierreInscripciones() {
-        return fechaCierreInscripciones;
-    }
-
-
-
-    public int getNumeroParticipantes() {
-        return numeroParticipantes;
-    }
-
-
-
-    public byte getLimiteEdad() {
-        return limiteEdad;
-    }
-
-
-
-    public int getValorInscripcion() {
-        return valorInscripcion;
-    }
-
-
-
-    public TipoTorneo getTipoTorneo() {
-        return tipoTorneo;
-    }
-
-
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-
->>>>>>> 9c3f3dc38bc029df890d15c89b055f6453b8097c
     public void llenarEquipos(ArrayList <Equipo> equipos){
       
         for (int i = 1; i <= numeroParticipantes; i++){
