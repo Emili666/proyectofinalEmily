@@ -34,6 +34,76 @@ public class Torneo {
     }
    
 
+    public String getNombre() {
+        return nombre;
+    }
+
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+
+    public String getFechaInicioInscripciones() {
+        return fechaInicioInscripciones;
+    }
+
+
+    public void setFechaInicioInscripciones(String fechaInicioInscripciones) {
+        this.fechaInicioInscripciones = fechaInicioInscripciones;
+    }
+
+
+    public String getFechaCierreInscripciones() {
+        return fechaCierreInscripciones;
+    }
+
+
+    public void setFechaCierreInscripciones(String fechaCierreInscripciones) {
+        this.fechaCierreInscripciones = fechaCierreInscripciones;
+    }
+
+
+    public int getNumeroParticipantes() {
+        return numeroParticipantes;
+    }
+
+
+    public int getLimiteEdad() {
+        return limiteEdad;
+    }
+
+
+    public int getValorInscripcion() {
+        return valorInscripcion;
+    }
+
+
+    public String getTipoTorneo() {
+        return tipoTorneo;
+    }
+
+
+    public void setTipoTorneo(String tipoTorneo) {
+        this.tipoTorneo = tipoTorneo;
+    }
+
+
+    public String getGenero() {
+        return genero;
+    }
+
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+
     public void llenarEquipos(ArrayList <Equipo> equipos){
       
         for (int i = 1; i <= numeroParticipantes; i++){
