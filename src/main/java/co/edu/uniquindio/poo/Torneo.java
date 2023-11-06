@@ -111,6 +111,9 @@ public class Torneo {
             String nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
             
             Equipo equipo=new Equipo(nombre);
+
+            equipo.llenarJugadores();
+
             equipos.add(equipo);
             }
             
@@ -118,7 +121,7 @@ public class Torneo {
     }
 
 
-public 
+
     
 
 

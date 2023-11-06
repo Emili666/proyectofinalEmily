@@ -68,7 +68,7 @@ public class Equipo {
         }
 
 
-       public void llenarJugadores(ArrayList <Jugador> jugadores){
+       public void llenarJugadores(){
       
         for (int i = 1; i <= numeroJugadoresEquipo; i++){
 
