@@ -1,5 +1,9 @@
 package co.edu.uniquindio.poo;
 
-public class Estados {
+public enum Estados {
+    PENDIENTE,
+    ENJUEGO,
+    FINALIZADO,
+    APLAZADO
     
 }
