@@ -20,7 +20,7 @@ public class Torneo {
     ArrayList<Jueces>juecesTotal=new ArrayList<>();
     ArrayList<Jueces>jueces=new ArrayList<>();
     ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
-    ArrayList<Enfrentamiento> enfrentamientos = new ArrayList();
+    ArrayList<Enfrentamiento> enfrentamientos = new ArrayList<>();
 
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
         String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
