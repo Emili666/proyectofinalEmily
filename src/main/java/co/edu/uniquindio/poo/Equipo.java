@@ -9,9 +9,11 @@ public class Equipo {
         private final String nombre;
         public int numeroJugadoresEquipo;
         
-        private int ganados;
-        private int perdidos;
-        private int empatados;
+        private static int partidosGanados;
+        private static int partidosPerdidos;
+        private static int partidosmpatados;
+        private static int puntosTotales;
+
         ArrayList<Jugador> jugadores = new ArrayList<>(numeroJugadoresEquipo);
         
 
