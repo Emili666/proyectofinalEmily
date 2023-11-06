@@ -16,60 +16,6 @@ public class Torneo {
     private  String tipoTorneo;
     private  String genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
 
-   
-        
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-
-    public String getFechaInicioInscripciones() {
-        return fechaInicioInscripciones;
-    }
-
-
-    public void setFechaInicioInscripciones(String fechaInicioInscripciones) {
-        this.fechaInicioInscripciones = fechaInicioInscripciones;
-    }
-
-    public String getFechaCierreInscripciones() {
-        return fechaCierreInscripciones;
-    }
-
-
-
-    public void setFechaCierreInscripciones(String fechaCierreInscripciones) {
-        this.fechaCierreInscripciones = fechaCierreInscripciones;
-    }
-
-
-    public String getTipoTorneo() {
-        return tipoTorneo;
-    }
-
-
-
-    public void setTipoTorneo(String tipoTorneo) {
-        this.tipoTorneo = tipoTorneo;
-    }
-
-
-
-    public String getGenero() {
-        return genero;
-    }
-
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-
 
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
             String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
@@ -95,6 +41,52 @@ public class Torneo {
 
    
 
+<<<<<<< HEAD
+=======
+
+
+    public LocalDate getFechaInicioInscripciones() {
+        return fechaInicioInscripciones;
+    }
+
+
+
+    public LocalDate getFechaCierreInscripciones() {
+        return fechaCierreInscripciones;
+    }
+
+
+
+    public int getNumeroParticipantes() {
+        return numeroParticipantes;
+    }
+
+
+
+    public byte getLimiteEdad() {
+        return limiteEdad;
+    }
+
+
+
+    public int getValorInscripcion() {
+        return valorInscripcion;
+    }
+
+
+
+    public TipoTorneo getTipoTorneo() {
+        return tipoTorneo;
+    }
+
+
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+
+>>>>>>> 9c3f3dc38bc029df890d15c89b055f6453b8097c
     public void llenarEquipos(ArrayList <Equipo> equipos){
       
         for (int i = 1; i <= numeroParticipantes; i++){
