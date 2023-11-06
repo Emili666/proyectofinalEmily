@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
 
-        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 4 parta salir "));
+        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 2 para arreglar enfrentamientos, resione 4 parta salir "));
         boolean isGenreValid = false;
         boolean isTypeValid = false;
         String tipo;
@@ -62,10 +62,10 @@ public class App {
                 }
 
                 Torneo current = new Torneo(nombre, fechaInicio, fechaInicioInscripciones, fechaFinalInscripciones, numeroParticipantes, edadLimite, valorInscripcion, tipo, genero);
+                current.llenarEquipos();
 
-
-               
-                decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar inmueble, 2 para mostrar lista de inmuebles"));
+        
+                decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar equipo"));
             }
 
             

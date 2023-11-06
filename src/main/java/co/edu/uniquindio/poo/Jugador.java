@@ -9,11 +9,7 @@ import javax.swing.JOptionPane;
 public class Jugador extends Persona {
      private final String fechaNacimiento;
      private final String genero; // Definir funcion de elegir genero
-    
-   
-    
-    
-
+ 
     public Jugador(String nombre, String apellido, String email, String celular, String fechaNacimiento,
             String genero) {
         super(nombre, apellido, email, celular);

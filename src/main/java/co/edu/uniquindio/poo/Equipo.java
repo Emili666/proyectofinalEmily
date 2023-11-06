@@ -16,8 +16,7 @@ public class Equipo {
         
 
         
-        public Equipo(String nombre, int numeroJugadoresEquipo, ArrayList<Jugador> jugadores, int ganados, int perdidos,
-                int empatados) {
+        public Equipo(String nombre, int numeroJugadoresEquipo) {
             this.nombre = nombre;
             this.numeroJugadoresEquipo = numeroJugadoresEquipo;
             this.jugadores = jugadores;

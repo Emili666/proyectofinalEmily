@@ -10,12 +10,15 @@ public class Torneo {
     private String fechaInicio;
     private String fechaInicioInscripciones;
     private String fechaCierreInscripciones;
-    private final int numeroParticipantes;
+    private  int numeroParticipantes;
     private final int limiteEdad;
     private final int valorInscripcion;
     private  String tipoTorneo;
     private  String genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
-
+    public int juecesPorPartido;
+    public int totalJueces;
+        
+    ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
 
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
             String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
@@ -29,11 +32,8 @@ public class Torneo {
         this.valorInscripcion = valorInscripcion;
         this.tipoTorneo = tipoTorneo;
         this.genero = genero;
-
-
     }
    
-
     public String getNombre() {
         return nombre;
     }
@@ -104,17 +104,19 @@ public class Torneo {
     }
 
 
-    public void llenarEquipos(ArrayList <Equipo> equipos){
+    public void llenarEquipos(){
       
         for (int i = 1; i <= numeroParticipantes; i++){
 
             String nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
+            int numeroJugadoresEquipo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese EL NUM DE JUGADORES"));
             
-            Equipo equipo=new Equipo(nombre);
-
-            equipo.llenarJugadores();
+            Equipo equipo=new Equipo(nombre, numeroJugadoresEquipo);
 
             equipos.add(equipo);
+            equipo.llenarJugadores();
+
+            
             }
             
         }
