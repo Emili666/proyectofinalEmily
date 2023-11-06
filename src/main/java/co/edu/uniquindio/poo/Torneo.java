@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class Torneo {
@@ -8,11 +10,17 @@ public class Torneo {
     private LocalDate fechaInicio;
     private LocalDate fechaInicioInscripciones;
     private LocalDate fechaCierreInscripciones;
-    private final byte numeroParticipantes;
+    public  int numeroParticipantes;
     private final byte limiteEdad;
     private final int valorInscripcion;
     private final TipoTorneo tipoTorneo;
-    private final Genero genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
+    private final Genero genero; 
+    ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
+        
+
+
+
+    //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
 
    
         
@@ -58,7 +66,7 @@ public class Torneo {
 
 
 
-    public byte getNumeroParticipantes() {
+    public int getNumeroParticipantes() {
         return numeroParticipantes;
     }
 
@@ -87,6 +95,20 @@ public class Torneo {
     }
 
 
+    public void llenarEquipos(ArrayList <Equipo> equipos, String nombre){
+      
+        for (int i = 1; i <= numeroParticipantes; i++){
+
+            nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
+            
+            Equipo equipo=new Equipo(nombre);
+            equipos.add(equipo);
+            }
+            
+        }
+
+    }
+
+
 
     
-}

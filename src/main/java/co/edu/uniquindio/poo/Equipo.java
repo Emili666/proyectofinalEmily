@@ -4,57 +4,56 @@ import java.util.ArrayList;
 
 public class Equipo {
         private final String nombre;
-        private final Persona representante;
-        private final ArrayList<Jugador> jugadores;
+      
+        private ArrayList<Jugador> jugadores;
         private int ganados;
         private int perdidos;
         private int empatados;
         
-        public Equipo(String nombre, Persona representante, ArrayList<Jugador> jugadores, int ganados, int perdidos,
-                int empatados) {
-            this.nombre = nombre;
-            this.representante = representante;
-            this.jugadores = jugadores;
-            this.ganados = ganados;
-            this.perdidos = perdidos;
-            this.empatados = empatados;
-        }
-
-        public String getNombre() {
-            return nombre;
-        }
-
-        public Persona getRepresentante() {
-            return representante;
-        }
-
         public ArrayList<Jugador> getJugadores() {
             return jugadores;
+        }
+
+        public void setJugadores(ArrayList<Jugador> jugadores) {
+            this.jugadores = jugadores;
         }
 
         public int getGanados() {
             return ganados;
         }
 
-        public int getPerdidos() {
-            return perdidos;
-        }
-
-        public int getEmpatados() {
-            return empatados;
-        }
-
         public void setGanados(int ganados) {
             this.ganados = ganados;
+        }
+
+        public int getPerdidos() {
+            return perdidos;
         }
 
         public void setPerdidos(int perdidos) {
             this.perdidos = perdidos;
         }
 
+        public int getEmpatados() {
+            return empatados;
+        }
+
         public void setEmpatados(int empatados) {
             this.empatados = empatados;
         }
+
+        public Equipo(String nombre) {
+            this.nombre = nombre;
+            
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+       
+
+        
 
         
     
