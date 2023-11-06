@@ -97,7 +97,7 @@ public class Torneo {
     }
 
 
-    public void llenarEquipos(ArrayList <Equipo> equipos, String nombre){
+    public void llenarEquipos(ArrayList <Equipo> equipos){
       
         for (int i = 1; i <= numeroParticipantes; i++){
 
