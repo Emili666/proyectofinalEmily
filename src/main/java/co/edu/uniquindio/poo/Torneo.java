@@ -12,14 +12,7 @@ public class Torneo {
     private final byte limiteEdad;
     private final int valorInscripcion;
     private final TipoTorneo tipoTorneo;
-<<<<<<< HEAD
-    private final Genero genero;
-    
-=======
     private final Genero genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
->>>>>>> aba1293fc112886b523aeb1d2cdca4e652ad9b07
-
-   
         
     public Torneo(String nombre, LocalDate fechaInicio, LocalDate fechaInicioInscripciones,
             LocalDate fechaCierreInscripciones, byte numeroParticipantes, byte limiteEdad, int valorInscripcion,
