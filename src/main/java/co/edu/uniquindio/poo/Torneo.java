@@ -13,6 +13,7 @@ public class Torneo {
     private final int valorInscripcion;
     private final TipoTorneo tipoTorneo;
     private final Genero genero;
+    
 
    
         
@@ -87,6 +88,10 @@ public class Torneo {
     }
 
 
+    public void validarGeneroTorneo(Genero genero){
+
+
+    }
 
     
 }
