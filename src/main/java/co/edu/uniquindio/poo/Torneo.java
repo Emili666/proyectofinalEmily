@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class Torneo {
@@ -16,6 +18,59 @@ public class Torneo {
 
    
         
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+
+    public String getFechaInicioInscripciones() {
+        return fechaInicioInscripciones;
+    }
+
+
+    public void setFechaInicioInscripciones(String fechaInicioInscripciones) {
+        this.fechaInicioInscripciones = fechaInicioInscripciones;
+    }
+
+    public String getFechaCierreInscripciones() {
+        return fechaCierreInscripciones;
+    }
+
+
+
+    public void setFechaCierreInscripciones(String fechaCierreInscripciones) {
+        this.fechaCierreInscripciones = fechaCierreInscripciones;
+    }
+
+
+    public String getTipoTorneo() {
+        return tipoTorneo;
+    }
+
+
+
+    public void setTipoTorneo(String tipoTorneo) {
+        this.tipoTorneo = tipoTorneo;
+    }
+
+
+
+    public String getGenero() {
+        return genero;
+    }
+
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+
+
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
             String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
             String tipoTorneo, String genero) {
@@ -34,14 +89,29 @@ public class Torneo {
 
 
 
-    public String getNombre() {
-        return nombre;
-    }
+    
 
 
 
    
 
+    public void llenarEquipos(ArrayList <Equipo> equipos){
+      
+        for (int i = 1; i <= numeroParticipantes; i++){
+
+            String nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
+            
+            Equipo equipo=new Equipo(nombre);
+            equipos.add(equipo);
+            }
+            
+        }
+    }
+
+
 
     
-}
+
+
+
+    

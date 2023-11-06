@@ -2,15 +2,20 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 public class Jugador extends Persona {
-     private final LocalDate fechaNacimiento;
-     private final Genero genero; // Definir funcion de elegir genero
-
+     private final String fechaNacimiento;
+     private final String genero; // Definir funcion de elegir genero
+    
+   
+    
     
 
-    public Jugador(String nombre, String apellido, String email, String celular, LocalDate fechaNacimiento,
-            Genero genero) {
+    public Jugador(String nombre, String apellido, String email, String celular, String fechaNacimiento,
+            String genero) {
         super(nombre, apellido, email, celular);
         this.fechaNacimiento = fechaNacimiento;
         this.genero = genero;
@@ -18,18 +23,18 @@ public class Jugador extends Persona {
 
     
 
-    public LocalDate getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
 
-    public Genero getGenero() {
+    public String getGenero() {
         return genero;
     }
 
 
-    public byte calcularEdad(LocalDate fecha){
-        return (byte) Period.between(fechaNacimiento, fecha).getYears();
-    }
-         
+           
+            
 }
+
+
