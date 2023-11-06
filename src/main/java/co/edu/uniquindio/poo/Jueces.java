@@ -1,7 +1,14 @@
 package co.edu.uniquindio.poo;
 
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 public class Jueces extends Persona {
     private final String licencia;
+   
+
+
     
     
 
@@ -14,5 +21,7 @@ public class Jueces extends Persona {
     public String getLicencia() {
         return licencia;
     }
-    
+
+
 }
+
