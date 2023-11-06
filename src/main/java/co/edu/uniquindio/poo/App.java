@@ -70,11 +70,7 @@ public class App {
                 decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar equipo"));
             }
 
-            if(decision == 2){
-
-
-                
-            }
+           
 
             
         }
