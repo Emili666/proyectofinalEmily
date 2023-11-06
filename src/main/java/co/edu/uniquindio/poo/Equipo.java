@@ -1,15 +1,31 @@
 package co.edu.uniquindio.poo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 public class Equipo {
         private final String nombre;
-      
-        private ArrayList<Jugador> jugadores;
+        public int numeroJugadoresEquipo;
+        
         private int ganados;
         private int perdidos;
         private int empatados;
+        ArrayList<Jugador> jugadores = new ArrayList<>(numeroJugadoresEquipo);
         
+
+        
+        public Equipo(String nombre, int numeroJugadoresEquipo, ArrayList<Jugador> jugadores, int ganados, int perdidos,
+                int empatados) {
+            this.nombre = nombre;
+            this.numeroJugadoresEquipo = numeroJugadoresEquipo;
+            this.jugadores = jugadores;
+            this.ganados = ganados;
+            this.perdidos = perdidos;
+            this.empatados = empatados;
+        }
+
         public ArrayList<Jugador> getJugadores() {
             return jugadores;
         }
@@ -51,14 +67,33 @@ public class Equipo {
             return nombre;
         }
 
-       
 
-        
+       public void llenarJugadores(ArrayList <Jugador> jugadores){
+      
+        for (int i = 1; i <= numeroJugadoresEquipo; i++){
 
-        
+            String nombre = JOptionPane.showInputDialog("Ingrese nombre del Jugador");
+            String apellido= JOptionPane.showInputDialog("Ingrese apellido del Jugador");
+            String celular = JOptionPane.showInputDialog("Ingrese celular del Jugador");
+            String email = JOptionPane.showInputDialog("Ingrese email del Jugador");
+            String fechaNacimiento=JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del Jugador");
+            String genero=JOptionPane.showInputDialog("Ingrese genero del Jugador");
+            Jugador jugador=new Jugador(nombre, apellido,celular,email, fechaNacimiento, genero);
+            jugadores.add(jugador);
+            }
+            
+        }
+
+    public int getNumeroJugadoresEquipo() {
+        return numeroJugadoresEquipo;
+    }
+
+    public void setNumeroJugadoresEquipo(int numeroJugadoresEquipo) {
+        this.numeroJugadoresEquipo = numeroJugadoresEquipo;
+    }                     
     
 
-    }
+}
 
 
 

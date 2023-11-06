@@ -15,7 +15,9 @@ public class Torneo {
     private final int valorInscripcion;
     private final TipoTorneo tipoTorneo;
     private final Genero genero; 
+    public int numeroJugadoresEquipo;
     ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
+
         
 
 
@@ -99,15 +101,16 @@ public class Torneo {
       
         for (int i = 1; i <= numeroParticipantes; i++){
 
-            nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
+            String nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
             
             Equipo equipo=new Equipo(nombre);
             equipos.add(equipo);
             }
             
         }
-
     }
+
+    
 
 
 
