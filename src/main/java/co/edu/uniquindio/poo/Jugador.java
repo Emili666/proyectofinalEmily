@@ -1,10 +1,6 @@
 package co.edu.uniquindio.poo;
 
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
 public class Jugador extends Persona {
      private final String fechaNacimiento;

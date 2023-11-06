@@ -1,8 +1,7 @@
 package co.edu.uniquindio.poo;
 
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import java.time.LocalDate;
+
 
 
 public class App {
