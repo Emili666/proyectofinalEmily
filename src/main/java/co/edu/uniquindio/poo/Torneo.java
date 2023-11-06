@@ -137,6 +137,17 @@ public class Torneo {
                 String local = equipos.get(index).getNombre();
                 String visita = equipos.get(index + 1).getNombre();
 
+                ArrayList <String> currentMatchJudges = new ArrayList<>(juecesPorPartido);
+
+                for (int index2 = 0; index2 < juecesPorPartido; index++) {
+
+                    currentMatchJudges.add(jueces.get(index2).getLicencia());    
+                }
+
+                String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo entre pendiente, enjuego, finalizado, aplazado");
+
+                Enfrentamiento current = new Enfrentamiento(lugar, fechaHora, local, visita, currentMatchJudges, estado);
+ 
 
 
 

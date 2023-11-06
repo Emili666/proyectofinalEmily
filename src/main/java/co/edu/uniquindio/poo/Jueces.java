@@ -6,11 +6,7 @@ import javax.swing.JOptionPane;
 
 public class Jueces extends Persona {
     private final String licencia;
-   
-
-
-    
-    
+     
 
     public Jueces(String nombre, String apellido, String email, String celular, String licencia) {
         super(nombre, apellido, email, celular);

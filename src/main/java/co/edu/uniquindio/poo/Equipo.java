@@ -1,14 +1,13 @@
 package co.edu.uniquindio.poo;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 public class Equipo {
         private final String nombre;
-        public int numeroJugadoresEquipo;
-        
+        public int numeroJugadoresEquipo;   
         private int ganados;
         private int perdidos;
         private int empatados;

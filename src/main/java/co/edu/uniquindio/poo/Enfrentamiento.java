@@ -1,25 +1,24 @@
 package co.edu.uniquindio.poo;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 
 public class Enfrentamiento {
-    private final String lugar;
-    private final LocalDate fechaHora;
+    private String lugar;
+    private String fechaHora;
     private String equipoLocal;
     private String equipoVisitante;
-    private final ArrayList<Integer> juez;
-    private final int resultado;
-    private final Estados estados;
+    private ArrayList<String> juez;
+    private  int resultado;
+    private String estados;
     
-    public Enfrentamiento(String lugar, LocalDate fechaHora, String equipoLocal, String equipoVisitante, ArrayList<Integer> juez, int resultado,
-            Estados estados) {
+    public Enfrentamiento(String lugar, String fechaHora, String equipoLocal, String equipoVisitante, ArrayList<String> juez,
+            String estados) {
         this.lugar = lugar;
         this.fechaHora = fechaHora;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.juez = juez;
-        this.resultado = resultado;
         this.estados = estados;
     }
 
@@ -27,7 +26,7 @@ public class Enfrentamiento {
         return lugar;
     }
 
-    public LocalDate getFechaHora() {
+    public String getFechaHora() {
         return fechaHora;
     }
 
@@ -47,7 +46,7 @@ public class Enfrentamiento {
         this.equipoVisitante = equipoVisitante;
     }
 
-    public ArrayList<Integer> getJuez() {
+    public ArrayList<String> getJuez() {
         return juez;
     }
 
@@ -55,7 +54,7 @@ public class Enfrentamiento {
         return resultado;
     }
 
-    public Estados getEstados() {
+    public String getEstados() {
         return estados;
     }
 
