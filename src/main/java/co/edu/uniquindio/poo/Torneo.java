@@ -12,7 +12,7 @@ public class Torneo {
     private final byte limiteEdad;
     private final int valorInscripcion;
     private final TipoTorneo tipoTorneo;
-    private final Genero genero;
+    private final Genero genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
 
    
         
