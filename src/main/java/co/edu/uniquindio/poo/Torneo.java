@@ -17,7 +17,8 @@ public class Torneo {
     private  String genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
     public int juecesPorPartido;
     public int totalJueces;
-        
+    ArrayList<Jueces>juecesTotal=new ArrayList<>();
+    ArrayList<Jueces>jueces=new ArrayList<>();
     ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
 
     public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
@@ -118,11 +119,38 @@ public class Torneo {
 
             
             }
-            
-        }
     }
+        public void llenarJueces(){
 
+            for (int i = 1; i <= juecesPorPartido; i++){
+        
+                String nombre=JOptionPane.showInputDialog("Ingrese nombre del o los jueces");
+                String apellido = JOptionPane.showInputDialog("Ingrese apellido del o los jueces");
+                String email = JOptionPane.showInputDialog("Ingrese  email del o los jueces");
+                String celular = JOptionPane.showInputDialog("Ingrese celular del o los jueces");
+                String licencia = JOptionPane.showInputDialog("Ingrese licencia del o los jueces"); 
+                Jueces juez=new Jueces(nombre, apellido, email, celular, licencia);
+        
+                jueces.add(juez);
+        
+                    
+            }
+        }
+        public void llenarJuecesTotal(){
 
+            for (int i = 1; i <= totalJueces; i++){
+        
+                String nombre=JOptionPane.showInputDialog("Ingrese nombre del o los jueces");
+                String apellido = JOptionPane.showInputDialog("Ingrese apellido del o los jueces");
+                String email = JOptionPane.showInputDialog("Ingrese  email del o los jueces");
+                String celular = JOptionPane.showInputDialog("Ingrese celular del o los jueces");
+                String licencia = JOptionPane.showInputDialog("Ingrese licencia del o los jueces"); 
+                Jueces juezNuevo=new Jueces(nombre, apellido, email, celular, licencia);
+        
+                juecesTotal.add(juezNuevo);
+    }
+}
+}
 
     
 
