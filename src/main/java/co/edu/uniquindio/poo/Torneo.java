@@ -5,20 +5,20 @@ import java.time.LocalDate;
 
 public class Torneo {
     private final String nombre;
-    private LocalDate fechaInicio;
-    private LocalDate fechaInicioInscripciones;
-    private LocalDate fechaCierreInscripciones;
-    private final byte numeroParticipantes;
-    private final byte limiteEdad;
+    private String fechaInicio;
+    private String fechaInicioInscripciones;
+    private String fechaCierreInscripciones;
+    private final int numeroParticipantes;
+    private final int limiteEdad;
     private final int valorInscripcion;
-    private final TipoTorneo tipoTorneo;
-    private final Genero genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
+    private  String tipoTorneo;
+    private  String genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
 
    
         
-    public Torneo(String nombre, LocalDate fechaInicio, LocalDate fechaInicioInscripciones,
-            LocalDate fechaCierreInscripciones, byte numeroParticipantes, byte limiteEdad, int valorInscripcion,
-            TipoTorneo tipoTorneo, Genero genero) {
+    public Torneo(String nombre, String fechaInicio, String fechaInicioInscripciones,
+            String fechaCierreInscripciones, int numeroParticipantes, int limiteEdad, int valorInscripcion,
+            String tipoTorneo, String genero) {
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
         this.fechaInicioInscripciones = fechaInicioInscripciones;
@@ -40,52 +40,7 @@ public class Torneo {
 
 
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-
-
-    public LocalDate getFechaInicioInscripciones() {
-        return fechaInicioInscripciones;
-    }
-
-
-
-    public LocalDate getFechaCierreInscripciones() {
-        return fechaCierreInscripciones;
-    }
-
-
-
-    public byte getNumeroParticipantes() {
-        return numeroParticipantes;
-    }
-
-
-
-    public byte getLimiteEdad() {
-        return limiteEdad;
-    }
-
-
-
-    public int getValorInscripcion() {
-        return valorInscripcion;
-    }
-
-
-
-    public TipoTorneo getTipoTorneo() {
-        return tipoTorneo;
-    }
-
-
-
-    public Genero getGenero() {
-        return genero;
-    }
-
+   
 
 
     
