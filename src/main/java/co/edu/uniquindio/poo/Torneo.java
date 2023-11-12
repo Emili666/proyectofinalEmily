@@ -146,42 +146,35 @@ public class Torneo {
         }
 
         // Se crean los enfrentamientos de una vez.
-        public void crearEnfrentamientos(){
-
-            JFrame f; 
-            int index;
-            for ( index = 0; index < (equipos.size() - 1); index++) { 
-
+        public void crearEnfrentamientos() {
+            JFrame f = new JFrame(); 
+            
+            for (int index = 0; index < equipos.size() - 1; index++) {
                 Equipo local = equipos.get(index);
-
-                for (int index3 = index; index < equipos.size() -1; index3++) {
-
-                Equipo visita = equipos.get(index3 + 1);
-
-                f = new JFrame();
-                JOptionPane.showMessageDialog(f,"El equipo local es: " + local.getNombre() + "vs" + visita.getNombre()); 
-
-                String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento");
-                String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");               
-               
-                ArrayList <String> currentMatchJudges = new ArrayList<>(juecesPorPartido);
-
-                for (int index2 = 0; index2 < juecesPorPartido; index2++) {
-
-                    currentMatchJudges.add(juecesTotal.get(rand.nextInt(juecesPorPartido)).getLicencia());
-                        
+                
+                for (int index3 = index + 1; index3 < equipos.size(); index3++) {
+                    Equipo visita = equipos.get(index3);
+                    
+                    JOptionPane.showMessageDialog(f, "El enfrentamiento es:  " + local.getNombre() + " vs " + visita.getNombre());
+                    
+                    String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento");
+                    String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");
+                    
+                    ArrayList<String> currentMatchJudges = new ArrayList<>(juecesPorPartido);
+                    
+                    for (int index2 = 0; index2 < juecesPorPartido; index2++) {
+                        currentMatchJudges.add(juecesTotal.get(rand.nextInt(juecesPorPartido)).getLicencia());
+                    }
+                    
+                    String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo entre pendiente, enjuego, finalizado, aplazado");
+                    
+                    Enfrentamiento current = new Enfrentamiento(lugar, fechaHora, local, visita, new ArrayList<>(currentMatchJudges), estado);
+                    
+                    enfrentamientos.add(current);
                 }
-
-                String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo entre pendiente, enjuego, finalizado, aplazado");
-
-                Enfrentamiento current = new Enfrentamiento(lugar, fechaHora, local, visita, currentMatchJudges, estado);
- 
-                enfrentamientos.add(current);
-
-                }
-
             }
-    }
+        }
+        
         
         public void llenarJuecesTotal(){
 
@@ -198,45 +191,38 @@ public class Torneo {
     }
   }
 
-  public void resolverEnfrentamientos(){
-
+  public void resolverEnfrentamientos() {
     for (int k = 0; k < enfrentamientos.size(); k++) {
-        
-        int  ganador = Integer.parseInt(JOptionPane.showInputDialog("Seleccione el resultado del partido: " + enfrentamientos.get(k).getEquipoLocal() + "vs " + enfrentamientos.get(k).getEquipoVisitante()+"\n Elija 1 para victoria de " + enfrentamientos.get(k).getEquipoLocal() + "\n Elija 2 para empate " + "\n Elija 3 para victoria de "+ enfrentamientos.get(k).getEquipoVisitante()));       
+        int ganador = Integer.parseInt(JOptionPane.showInputDialog(
+                "Seleccione el resultado del partido: " +
+                        enfrentamientos.get(k).getEquipoLocal().getNombre() +
+                        " vs " +
+                        enfrentamientos.get(k).getEquipoVisitante().getNombre() +
+                        "\n Elija 1 para victoria de " +
+                        enfrentamientos.get(k).getEquipoLocal().getNombre() +
+                        "\n Elija 2 para empate " +
+                        "\n Elija 3 para victoria de " +
+                        enfrentamientos.get(k).getEquipoVisitante().getNombre()));
 
         if (ganador == 1) {
-            
-           enfrentamientos.get(k).getEquipoLocal().sumarPuntosGana();
-           enfrentamientos.get(k).getEquipoLocal().sumarPartidosGanados();
-
-           enfrentamientos.get(k).getEquipoVisitante().sumarPartidosPerdidos();
-
-        }
-
-        else if (ganador == 2){
-
+            enfrentamientos.get(k).getEquipoLocal().sumarPuntosGana();
+            enfrentamientos.get(k).getEquipoLocal().sumarPartidosGanados();
+            enfrentamientos.get(k).getEquipoVisitante().sumarPartidosPerdidos();
+        } else if (ganador == 2) {
             enfrentamientos.get(k).getEquipoLocal().sumarPartidosEmpatados();
             enfrentamientos.get(k).getEquipoLocal().sumarPuntosEmpata();
-
             enfrentamientos.get(k).getEquipoVisitante().sumarPartidosEmpatados();
             enfrentamientos.get(k).getEquipoVisitante().sumarPuntosEmpata();
+        } else {
+            enfrentamientos.get(k).getEquipoVisitante().sumarPuntosGana();
+            enfrentamientos.get(k).getEquipoVisitante().sumarPartidosGanados();
+            enfrentamientos.get(k).getEquipoLocal().sumarPartidosPerdidos();
         }
-
-        else {
-
-           enfrentamientos.get(k).getEquipoVisitante().sumarPuntosGana();
-           enfrentamientos.get(k).getEquipoVisitante().sumarPartidosGanados();
-
-           enfrentamientos.get(k).getEquipoLocal().sumarPartidosPerdidos();
-
-        }
-
     }
+}
 
-  }
 
-
-        
+    
 }
 
     

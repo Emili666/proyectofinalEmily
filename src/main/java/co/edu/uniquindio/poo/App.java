@@ -86,7 +86,7 @@ public class App {
             }
 
             if(decision == 2){
-                
+
 
             JFrame g = new JFrame();
             JOptionPane.showMessageDialog(g, "A continuacion se van a registrar los jueces del torneo"); 
