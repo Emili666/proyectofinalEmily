@@ -1,11 +1,14 @@
 package co.edu.uniquindio.poo;
 
 import javax.swing.*; 
+import java.util.Comparator;
+import java.util.Collections;
+
 
 public class App {
     public static void main(String[] args) {
 
-        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 2 para arreglar enfrentamientos, presione 3 para salir "));
+        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 2 para arreglar enfrentamientos, resione 4 parta salir "));
         boolean isGenreValid = false;
         boolean isTypeValid = false;
         String tipo;
@@ -29,8 +32,8 @@ public class App {
                 int juecesPorPartido = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces por partido"));
                 int juecesTotales = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces totales"));
                 
-                genero = JOptionPane.showInputDialog("Ingrese el genero del torneo, entre Masculino, Femenino y Mixto").toUpperCase();
-                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local").toUpperCase();
+                genero = JOptionPane.showInputDialog("Ingrese el genero del torneo, entre Masculino, Femenino y Mixto");
+                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local");
 
                 while(isGenreValid == false){
                 String masculino = Genero.MASCULINO+"";
@@ -42,7 +45,7 @@ public class App {
                     isGenreValid = true;
                 }
                 else{
-                    genero = JOptionPane.showInputDialog("Ingrese nuevamente el genero del torneo, entre Masculino, Femenino y Mixto").toUpperCase();
+                    genero = JOptionPane.showInputDialog("Ingrese nuevamente el genero del torneo, entre Masculino, Femenino y Mixto");
                 }
 
                 }
@@ -59,7 +62,7 @@ public class App {
                     isTypeValid = true;
                 }
                 else{
-                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, mundial o local").toUpperCase();
+                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local");
                 }
                 }
 
@@ -79,6 +82,10 @@ public class App {
 
                 current.llenarEquipos();
 
+
+
+
+
         
                 decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar equipo"));
             }
@@ -93,6 +100,14 @@ public class App {
             current.llenarJuecesTotal();
             current.crearEnfrentamientos();
             current.resolverEnfrentamientos();
+
+            decision = Integer.parseInt(JOptionPane.showInputDialog("Oprima 3 para ver los resultados"));
+
+            }
+
+            if(decision == 3){
+
+                current.ordenarGanadores();
 
             }
 

@@ -9,10 +9,10 @@ public class Equipo {
         private final String nombre;
         public int numeroJugadoresEquipo;
         
-        private static int partidosGanados;
-        private static int partidosPerdidos;
-        private static int partidosmpatados;
-        private static int puntosTotales;
+        private  int partidosGanados;
+        private  int partidosPerdidos;
+        private  int partidosmpatados;
+        private  int puntosTotales;
 
         ArrayList<Jugador> jugadores = new ArrayList<>(numeroJugadoresEquipo);
         
@@ -21,10 +21,6 @@ public class Equipo {
         public Equipo(String nombre, int numeroJugadoresEquipo) {
             this.nombre = nombre;
             this.numeroJugadoresEquipo = numeroJugadoresEquipo;
-            this.jugadores = jugadores;
-            this.partidosGanados = partidosGanados;
-            this.partidosPerdidos = partidosPerdidos;
-            this.partidosmpatados = partidosmpatados;
         }
 
         public ArrayList<Jugador> getJugadores() {
@@ -35,28 +31,28 @@ public class Equipo {
             this.jugadores = jugadores;
         }
 
-        public static int getPartidosGanados() {
+        public int getPartidosGanados() {
             return partidosGanados;
         }
 
         public void setPartidosGanados(int ganados) {
-            Equipo.partidosGanados = ganados;
+            partidosGanados = ganados;
         }
 
-        public static int getPartidosPerdidos() {
+        public  int getPartidosPerdidos() {
             return partidosPerdidos;
         }
 
         public void setPartidosPerdidos(int perdidos) {
-            Equipo.partidosPerdidos = partidosGanados;
+            partidosPerdidos = partidosGanados;
         }
 
-        public static int getPartidosEmpatados() {
+        public  int getPartidosEmpatados() {
             return partidosmpatados;
         }
 
         public void setPartidosEmpatados(int empatados) {
-            Equipo.partidosmpatados = partidosmpatados;
+            partidosmpatados = empatados;
         }
 
         public Equipo(String nombre) {
@@ -93,42 +89,42 @@ public class Equipo {
         this.numeroJugadoresEquipo = numeroJugadoresEquipo;
     }   
     public void sumarPuntosGana() {
-        int puntosActuales=Equipo.getPuntosTotales();
+        int puntosActuales= getPuntosTotales();
 
         setPuntostotales(puntosActuales + 3);
 
         
     }
      public void sumarPuntosEmpata() {
-        int puntosActuales=Equipo.getPuntosTotales();
+        int puntosActuales= getPuntosTotales();
 
         setPuntostotales(puntosActuales + 1);
      }
 
 
     public void sumarPartidosGanados() {
-        int partidosActuales=Equipo.getPartidosGanados();
+        int partidosActuales= getPartidosGanados();
 
         setPartidosGanados(partidosActuales +1);
 
      }
      public void sumarPartidosPerdidos() {
-        int partidosActuales=Equipo.getPartidosPerdidos();
+        int partidosActuales= getPartidosPerdidos();
 
         setPartidosPerdidos(partidosActuales+1);
 
      }
      public void sumarPartidosEmpatados() {
-        int partidosActuales=Equipo.getPartidosEmpatados();
+        int partidosActuales= getPartidosEmpatados();
 
         setPartidosEmpatados(partidosActuales +1);
      }
-     public static int getPuntosTotales() {
+     public int getPuntosTotales() {
             return puntosTotales;
         }
 
         public void setPuntostotales(int puntostotales) {
-            Equipo.puntosTotales = puntostotales;
+            puntosTotales = puntostotales;
         }                 
     
 

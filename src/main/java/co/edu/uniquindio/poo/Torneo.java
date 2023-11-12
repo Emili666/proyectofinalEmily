@@ -1,11 +1,13 @@
 package co.edu.uniquindio.poo;
 
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
+
 import javax.swing.*;  
 
-public class Torneo {
+
+
+public class  Torneo  implements Comparator<Equipo> {
     private String nombre;
     private String fechaInicio;
     private String fechaInicioInscripciones;
@@ -219,6 +221,30 @@ public class Torneo {
             enfrentamientos.get(k).getEquipoLocal().sumarPartidosPerdidos();
         }
     }
+}
+
+public void ordenarGanadores(){
+
+    JFrame g = new JFrame();
+    JOptionPane.showMessageDialog(g, "A continuacion se van a dar los resultados del torneo"); 
+
+     Collections.sort(equipos, new ordenarPorPuntos());
+     String textoGanadores = "";
+     for (Equipo equipo : equipos) {
+        
+        String currrent = equipo.getNombre() + "  Puntos: " + equipo.getPuntosTotales() + "\n";
+        textoGanadores += currrent;
+   }
+
+   JOptionPane.showMessageDialog(g, textoGanadores);
+
+}
+
+
+@Override
+public int compare(Equipo o1, Equipo o2) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'compare'");
 }
 
 
