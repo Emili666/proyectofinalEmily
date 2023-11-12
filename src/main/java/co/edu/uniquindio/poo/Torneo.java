@@ -2,23 +2,24 @@ package co.edu.uniquindio.poo;
 
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
-
+import java.util.Random;
+import javax.swing.*;  
 
 public class Torneo {
-    private final String nombre;
+    private String nombre;
     private String fechaInicio;
     private String fechaInicioInscripciones;
     private String fechaCierreInscripciones;
     private  int numeroParticipantes;
-    private final int limiteEdad;
-    private final int valorInscripcion;
+    private  int limiteEdad;
+    private  int valorInscripcion;
     private  String tipoTorneo;
     private  String genero; //  Hacer funcion para que saque la info del enum genero y haga un set() de ella en la clase torneo.
     public int juecesPorPartido;
     public int totalJueces;
+
+    Random rand = new Random();
     ArrayList<Jueces>juecesTotal=new ArrayList<>();
-    ArrayList<Jueces>jueces=new ArrayList<>();
     ArrayList<Equipo> equipos = new ArrayList<>(numeroParticipantes);
     ArrayList<Enfrentamiento> enfrentamientos = new ArrayList<>();
 
@@ -37,74 +38,93 @@ public class Torneo {
         this.juecesPorPartido = juecesPorPartido;
         this.totalJueces = totalJueces;
     }
-   
+
     public String getNombre() {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getFechaInicio() {
         return fechaInicio;
     }
 
-
     public void setFechaInicio(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
-
 
     public String getFechaInicioInscripciones() {
         return fechaInicioInscripciones;
     }
 
-
     public void setFechaInicioInscripciones(String fechaInicioInscripciones) {
         this.fechaInicioInscripciones = fechaInicioInscripciones;
     }
-
 
     public String getFechaCierreInscripciones() {
         return fechaCierreInscripciones;
     }
 
-
     public void setFechaCierreInscripciones(String fechaCierreInscripciones) {
         this.fechaCierreInscripciones = fechaCierreInscripciones;
     }
-
 
     public int getNumeroParticipantes() {
         return numeroParticipantes;
     }
 
-
+    public void setNumeroParticipantes(int numeroParticipantes) {
+        this.numeroParticipantes = numeroParticipantes;
+    }
+   
     public int getLimiteEdad() {
         return limiteEdad;
     }
 
+    public void setLimiteEdad(int limiteEdad) {
+        this.limiteEdad = limiteEdad;
+    }
 
     public int getValorInscripcion() {
         return valorInscripcion;
     }
 
+    public void setValorInscripcion(int valorInscripcion) {
+        this.valorInscripcion = valorInscripcion;
+    }
 
     public String getTipoTorneo() {
         return tipoTorneo;
     }
 
-
     public void setTipoTorneo(String tipoTorneo) {
         this.tipoTorneo = tipoTorneo;
     }
-
 
     public String getGenero() {
         return genero;
     }
 
-
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public int getJuecesPorPartido() {
+        return juecesPorPartido;
+    }
+
+    public void setJuecesPorPartido(int juecesPorPartido) {
+        this.juecesPorPartido = juecesPorPartido;
+    }
+
+    public int getTotalJueces() {
+        return totalJueces;
+    }
+
+    public void setTotalJueces(int totalJueces) {
+        this.totalJueces = totalJueces;
     }
 
 
@@ -128,47 +148,41 @@ public class Torneo {
         // Se crean los enfrentamientos de una vez.
         public void crearEnfrentamientos(){
 
+            JFrame f; 
             int index;
-            for ( index = 0; index < (equipos.size() - 1); index++) {
-                
+            for ( index = 0; index < (equipos.size() - 1); index++) { 
+
+                Equipo local = equipos.get(index);
+
+                for (int index3 = index; index < equipos.size() -1; index3++) {
+
+                Equipo visita = equipos.get(index3 + 1);
+
+                f = new JFrame();
+                JOptionPane.showMessageDialog(f,"El equipo local es: " + local.getNombre() + "vs" + visita.getNombre()); 
 
                 String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento");
-                String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");
-                String local = equipos.get(index).getNombre();
-                String visita = equipos.get(index + 1).getNombre();
-
+                String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");               
+               
                 ArrayList <String> currentMatchJudges = new ArrayList<>(juecesPorPartido);
 
-                for (int index2 = 0; index2 < juecesPorPartido; index++) {
+                for (int index2 = 0; index2 < juecesPorPartido; index2++) {
 
-                    currentMatchJudges.add(jueces.get(index2).getLicencia());    
+                    currentMatchJudges.add(juecesTotal.get(rand.nextInt(juecesPorPartido)).getLicencia());
+                        
                 }
 
                 String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo entre pendiente, enjuego, finalizado, aplazado");
 
                 Enfrentamiento current = new Enfrentamiento(lugar, fechaHora, local, visita, currentMatchJudges, estado);
  
+                enfrentamientos.add(current);
 
-
+                }
 
             }
     }
-        public void llenarJueces(){
-
-            for (int i = 1; i <= juecesPorPartido; i++){
         
-                String nombre=JOptionPane.showInputDialog("Ingrese nombre del o los jueces");
-                String apellido = JOptionPane.showInputDialog("Ingrese apellido del o los jueces");
-                String email = JOptionPane.showInputDialog("Ingrese  email del o los jueces");
-                String celular = JOptionPane.showInputDialog("Ingrese celular del o los jueces");
-                String licencia = JOptionPane.showInputDialog("Ingrese licencia del o los jueces"); 
-                Jueces juez=new Jueces(nombre, apellido, email, celular, licencia);
-        
-                jueces.add(juez);
-        
-                    
-            }
-        }
         public void llenarJuecesTotal(){
 
             for (int i = 1; i <= totalJueces; i++){
@@ -182,7 +196,47 @@ public class Torneo {
         
                 juecesTotal.add(juezNuevo);
     }
-}
+  }
+
+  public void resolverEnfrentamientos(){
+
+    for (int k = 0; k < enfrentamientos.size(); k++) {
+        
+        int  ganador = Integer.parseInt(JOptionPane.showInputDialog("Seleccione el resultado del partido: " + enfrentamientos.get(k).getEquipoLocal() + "vs " + enfrentamientos.get(k).getEquipoVisitante()+"\n Elija 1 para victoria de " + enfrentamientos.get(k).getEquipoLocal() + "\n Elija 2 para empate " + "\n Elija 3 para victoria de "+ enfrentamientos.get(k).getEquipoVisitante()));       
+
+        if (ganador == 1) {
+            
+           enfrentamientos.get(k).getEquipoLocal().sumarPuntosGana();
+           enfrentamientos.get(k).getEquipoLocal().sumarPartidosGanados();
+
+           enfrentamientos.get(k).getEquipoVisitante().sumarPartidosPerdidos();
+
+        }
+
+        else if (ganador == 2){
+
+            enfrentamientos.get(k).getEquipoLocal().sumarPartidosEmpatados();
+            enfrentamientos.get(k).getEquipoLocal().sumarPuntosEmpata();
+
+            enfrentamientos.get(k).getEquipoVisitante().sumarPartidosEmpatados();
+            enfrentamientos.get(k).getEquipoVisitante().sumarPuntosEmpata();
+        }
+
+        else {
+
+           enfrentamientos.get(k).getEquipoVisitante().sumarPuntosGana();
+           enfrentamientos.get(k).getEquipoVisitante().sumarPartidosGanados();
+
+           enfrentamientos.get(k).getEquipoLocal().sumarPartidosPerdidos();
+
+        }
+
+    }
+
+  }
+
+
+        
 }
 
     

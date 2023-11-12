@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-import javax.swing.JOptionPane;
+import javax.swing.*; 
 
 
 
@@ -12,6 +12,8 @@ public class App {
         boolean isTypeValid = false;
         String tipo;
         String genero;
+
+        Torneo current = new Torneo("", "", "", "", 0, 0,  0, "", "", 0, 0);
 
         while (decision != 4) {
             if (decision == 1) {
@@ -63,11 +65,37 @@ public class App {
                 }
                 }
 
-                Torneo current = new Torneo(nombre, fechaInicio, fechaInicioInscripciones, fechaFinalInscripciones, numeroParticipantes, edadLimite, valorInscripcion, tipo, genero, juecesPorPartido, juecesTotales);
+                current.setFechaCierreInscripciones(fechaFinalInscripciones);
+                current.setFechaInicio(fechaInicio);
+                current.setFechaInicioInscripciones(fechaInicioInscripciones);
+                current.setGenero(genero);
+                current.setNombre(nombre);
+                current.setNumeroParticipantes(numeroParticipantes);
+                current.setJuecesPorPartido(juecesPorPartido);
+                current.setTotalJueces(juecesTotales);
+                current.setLimiteEdad(edadLimite);
+                current.setTipoTorneo(tipo);
+                current.setValorInscripcion(valorInscripcion);
+
+
+
                 current.llenarEquipos();
 
         
                 decision = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su elección: 1 para agregar equipo"));
+            }
+
+            if(decision == 2){
+                
+
+            JFrame g = new JFrame();
+            JOptionPane.showMessageDialog(g, "A continuacion se van a registrar los jueces del torneo"); 
+            
+
+            current.llenarJuecesTotal();
+            current.crearEnfrentamientos();
+            current.resolverEnfrentamientos();
+
             }
 
            

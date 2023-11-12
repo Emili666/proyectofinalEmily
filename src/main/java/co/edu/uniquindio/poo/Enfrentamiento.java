@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class Enfrentamiento {
     private String lugar;
     private String fechaHora;
-    private String equipoLocal;
-    private String equipoVisitante;
+    private Equipo equipoLocal;
+    private Equipo equipoVisitante;
     private ArrayList<String> juez;
     private  int resultado;
-    private String estados;
+    private String estados = Estados.PENDIENTE+"";
     
-    public Enfrentamiento(String lugar, String fechaHora, String equipoLocal, String equipoVisitante, ArrayList<String> juez,
+    public Enfrentamiento(String lugar, String fechaHora, Equipo equipoLocal, Equipo equipoVisitante, ArrayList<String> juez,
             String estados) {
         this.lugar = lugar;
         this.fechaHora = fechaHora;
@@ -30,19 +30,19 @@ public class Enfrentamiento {
         return fechaHora;
     }
 
-    public String getEquipoLocal() {
+    public Equipo getEquipoLocal() {
         return equipoLocal;
     }
 
-    public void setEquipoLocal(String equipoLocal) {
+    public void setEquipoLocal(Equipo equipoLocal) {
         this.equipoLocal = equipoLocal;
     }
 
-    public String getEquipoVisitante() {
+    public Equipo getEquipoVisitante() {
         return equipoVisitante;
     }
 
-    public void setEquipoVisitante(String equipoVisitante) {
+    public void setEquipoVisitante(Equipo equipoVisitante) {
         this.equipoVisitante = equipoVisitante;
     }
 
