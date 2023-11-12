@@ -54,7 +54,7 @@ public class AppTest {
     @Test
     public void valorInscripcionNegativo() {
         LOG.info("Inicio de prueba valor inscripcion negativo...");
-        assertThrows(Throwable.class, ()-> new Torneo("Tounament Creator 2.0","20/3/2023" , "9/2/2023", "9/3/2023", -4, 30, -1000, "local", "masculino" , 2, 6));
+        assertThrows(Throwable.class, ()-> new Torneo("Tounament Creator 2.0","20/3/2023" , "9/2/2023", "9/3/2023",4, 30, -1000, "local", "masculino" , 2, 6));
         LOG.info("Fin de prueba valor inscripcion negativo...");
     }
 
