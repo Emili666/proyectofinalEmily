@@ -2,12 +2,10 @@ package co.edu.uniquindio.poo;
 
 import javax.swing.*; 
 
-
-
 public class App {
     public static void main(String[] args) {
 
-        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 2 para arreglar enfrentamientos, resione 4 parta salir "));
+        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0.     Presiona 1 para crear torneo nuevo, presione 2 para arreglar enfrentamientos, presione 3 para salir "));
         boolean isGenreValid = false;
         boolean isTypeValid = false;
         String tipo;
@@ -31,8 +29,8 @@ public class App {
                 int juecesPorPartido = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces por partido"));
                 int juecesTotales = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces totales"));
                 
-                genero = JOptionPane.showInputDialog("Ingrese el genero del torneo, entre Masculino, Femenino y Mixto");
-                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local");
+                genero = JOptionPane.showInputDialog("Ingrese el genero del torneo, entre Masculino, Femenino y Mixto").toUpperCase();
+                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local").toUpperCase();
 
                 while(isGenreValid == false){
                 String masculino = Genero.MASCULINO+"";
@@ -44,7 +42,7 @@ public class App {
                     isGenreValid = true;
                 }
                 else{
-                    genero = JOptionPane.showInputDialog("Ingrese nuevamente el genero del torneo, entre Masculino, Femenino y Mixto");
+                    genero = JOptionPane.showInputDialog("Ingrese nuevamente el genero del torneo, entre Masculino, Femenino y Mixto").toUpperCase();
                 }
 
                 }
@@ -61,7 +59,7 @@ public class App {
                     isTypeValid = true;
                 }
                 else{
-                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, Nacional o local");
+                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo, entre Nacional, Regional, mundial o local").toUpperCase();
                 }
                 }
 
