@@ -134,8 +134,8 @@ public class  Torneo  implements Comparator<Equipo> {
       
         for (int i = 1; i <= numeroParticipantes; i++){
 
-            String nombre = JOptionPane.showInputDialog("Ingrese nombre del equipo");
-            int numeroJugadoresEquipo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese EL NUM DE JUGADORES"));
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre del equipo:");
+            int numeroJugadoresEquipo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jugadores:"));
             
             Equipo equipo=new Equipo(nombre, numeroJugadoresEquipo);
 
@@ -159,8 +159,8 @@ public class  Torneo  implements Comparator<Equipo> {
                     
                     JOptionPane.showMessageDialog(f, "El enfrentamiento es:  " + local.getNombre() + " vs " + visita.getNombre());
                     
-                    String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento");
-                    String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo");
+                    String lugar = JOptionPane.showInputDialog("Ingrese el lugar del enfrentamiento:");
+                    String fechaHora = JOptionPane.showInputDialog("Ingrese fecha Y hora del torneo:");
                     
                     ArrayList<String> currentMatchJudges = new ArrayList<>(juecesPorPartido);
                     
@@ -168,7 +168,7 @@ public class  Torneo  implements Comparator<Equipo> {
                         currentMatchJudges.add(juecesTotal.get(rand.nextInt(juecesPorPartido)).getLicencia());
                     }
                     
-                    String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo entre pendiente, enjuego, finalizado, aplazado");
+                    String estado = JOptionPane.showInputDialog("Ingrese el estado del torneo: \n Pendiente  \n Enjuego \n Finalizado \n Aplazado");
                     
                     Enfrentamiento current = new Enfrentamiento(lugar, fechaHora, local, visita, new ArrayList<>(currentMatchJudges), estado);
                     
@@ -182,11 +182,11 @@ public class  Torneo  implements Comparator<Equipo> {
 
             for (int i = 1; i <= totalJueces; i++){
         
-                String nombre=JOptionPane.showInputDialog("Ingrese nombre del o los jueces");
-                String apellido = JOptionPane.showInputDialog("Ingrese apellido del o los jueces");
-                String email = JOptionPane.showInputDialog("Ingrese  email del o los jueces");
-                String celular = JOptionPane.showInputDialog("Ingrese celular del o los jueces");
-                String licencia = JOptionPane.showInputDialog("Ingrese licencia del o los jueces"); 
+                String nombre=JOptionPane.showInputDialog("Ingrese nombre del juez:");
+                String apellido = JOptionPane.showInputDialog("Ingrese apellido del juez:");
+                String email = JOptionPane.showInputDialog("Ingrese  email  del juez:");
+                String celular = JOptionPane.showInputDialog("Ingrese celular del juez:");
+                String licencia = JOptionPane.showInputDialog("Ingrese licencia del juez:"); 
                 Jueces juezNuevo=new Jueces(nombre, apellido, email, celular, licencia);
         
                 juecesTotal.add(juezNuevo);

@@ -69,12 +69,12 @@ public class Equipo {
       
         for (int i = 1; i <= numeroJugadoresEquipo; i++){
 
-            String nombre = JOptionPane.showInputDialog("Ingrese nombre del Jugador");
-            String apellido= JOptionPane.showInputDialog("Ingrese apellido del Jugador");
-            String celular = JOptionPane.showInputDialog("Ingrese celular del Jugador");
-            String email = JOptionPane.showInputDialog("Ingrese email del Jugador");
-            String fechaNacimiento=JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del Jugador");
-            String genero=JOptionPane.showInputDialog("Ingrese genero del Jugador");
+            String nombre = JOptionPane.showInputDialog("Ingrese nombre del Jugador:");
+            String apellido= JOptionPane.showInputDialog("Ingrese apellido del Jugador:");
+            String celular = JOptionPane.showInputDialog("Ingrese celular del Jugador:");
+            String email = JOptionPane.showInputDialog("Ingrese email del Jugador:");
+            String fechaNacimiento=JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del Jugador:");
+            String genero=JOptionPane.showInputDialog("Ingrese genero del Jugador:");
             Jugador jugador=new Jugador(nombre, apellido,celular,email, fechaNacimiento, genero);
             jugadores.add(jugador);
             }
