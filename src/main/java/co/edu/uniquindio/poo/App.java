@@ -8,7 +8,7 @@ import java.util.Collections;
 public class App {
     public static void main(String[] args) {
 
-        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0:  \n Presiona 1 para crear torneo nuevo  \n Presiona 4 para salir"));
+        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0:  \n Presiona 1 para crear torneo nuevo "));
         boolean isGenreValid = false;
         boolean isTypeValid = false;
         String tipo;
@@ -33,7 +33,7 @@ public class App {
                 int juecesTotales = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de jueces totales:"));
                 
                 genero = JOptionPane.showInputDialog("Ingrese el genero del torneo:  \n Masculino \n Femenino \n Mixto").toUpperCase();
-                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo: \n Nacional \n Regional \n Nacional \n Local").toUpperCase();
+                tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo: \n Nacional \n Regional \n Mundial \n Local").toUpperCase();
 
                 while(isGenreValid == false){
                 String masculino = Genero.MASCULINO+"";
@@ -62,7 +62,7 @@ public class App {
                     isTypeValid = true;
                 }
                 else{
-                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo: \\n Nacional \n Regional \n Nacional \n Local").toUpperCase();
+                    tipo = JOptionPane.showInputDialog("Ingrese el tipo del torneo: \\n Nacional \n Regional \n Mundial \n Local").toUpperCase();
                 }
                 }
 

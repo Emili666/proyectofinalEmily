@@ -6,7 +6,6 @@ import java.util.*;
 import javax.swing.*;  
 
 
-
 public class  Torneo  implements Comparator<Equipo> {
     private String nombre;
     private String fechaInicio;
@@ -39,8 +38,16 @@ public class  Torneo  implements Comparator<Equipo> {
         this.genero = genero;
         this.juecesPorPartido = juecesPorPartido;
         this.totalJueces = totalJueces;
+        assert nombre != null;
+        assert fechaInicio != null;
+        assert fechaInicioInscripciones != null;
+        assert fechaCierreInscripciones != null;
+        assert tipoTorneo!=null;
+        assert genero!=null;
+        assert limiteEdad >= 0;
+        assert numeroParticipantes >= 0;
+        assert valorInscripcion >= 0;
     }
-
     public String getNombre() {
         return nombre;
     }
@@ -261,11 +268,8 @@ public int compare(Equipo o1, Equipo o2) {
     throw new UnsupportedOperationException("Unimplemented method 'compare'");
 }
 
-
-    
 }
 
-    
 
 
 
