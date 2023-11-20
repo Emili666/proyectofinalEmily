@@ -104,6 +104,8 @@ public class App {
             if(decision == 3){
 
                 current.ordenarGanadores();
+        
+                
 
             }
 
