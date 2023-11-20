@@ -223,6 +223,20 @@ public class  Torneo  implements Comparator<Equipo> {
     }
 }
 
+public void mostrarInfoEnfrentamientos(){
+
+    JFrame g = new JFrame();
+    JOptionPane.showMessageDialog(g, "Se van a mostrar los estados de los partidos");
+
+    for (int index = 0; index < enfrentamientos.size(); index++) {
+        
+        JOptionPane.showMessageDialog(g, "El estado del enfrentamiento: " + enfrentamientos.get(index).getEquipoLocal().getNombre() + " vs " + enfrentamientos.get(index).getEquipoVisitante().getNombre() + " es " + enfrentamientos.get(index).getEstados());
+
+    }
+
+
+}
+
 public void ordenarGanadores(){
 
     JFrame g = new JFrame();

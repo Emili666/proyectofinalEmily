@@ -8,7 +8,7 @@ import java.util.Collections;
 public class App {
     public static void main(String[] args) {
 
-        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0:  \n Presiona 1 para crear torneo nuevo \n Presiona 2 para arreglar enfrentamientos \n Presiona 4 para salir"));
+        int decision = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido a Tounament Creator 2.0:  \n Presiona 1 para crear torneo nuevo  \n Presiona 4 para salir"));
         boolean isGenreValid = false;
         boolean isTypeValid = false;
         String tipo;
@@ -95,7 +95,9 @@ public class App {
 
             current.llenarJuecesTotal();
             current.crearEnfrentamientos();
+            current.mostrarInfoEnfrentamientos();
             current.resolverEnfrentamientos();
+            
 
             decision = Integer.parseInt(JOptionPane.showInputDialog("Oprima 3 para ver los resultados:"));
 
@@ -104,6 +106,8 @@ public class App {
             if(decision == 3){
 
                 current.ordenarGanadores();
+
+                decision = Integer.parseInt(JOptionPane.showInputDialog("Oprima 4 para salir"));
 
             }
 
