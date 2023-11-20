@@ -95,6 +95,7 @@ public class App {
 
             current.llenarJuecesTotal();
             current.crearEnfrentamientos();
+            current.mostrarInfoEnfrentamientos();
             current.resolverEnfrentamientos();
 
             decision = Integer.parseInt(JOptionPane.showInputDialog("Oprima 3 para ver los resultados:"));
@@ -104,6 +105,7 @@ public class App {
             if(decision == 3){
 
                 current.ordenarGanadores();
+                
         
                 
 
