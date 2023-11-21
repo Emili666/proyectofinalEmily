@@ -261,7 +261,28 @@ public void ordenarGanadores(){
 
 }
 
+public void verificarLicenciaEnEnfretamiento(String licencia){
+    JFrame g = new JFrame();
+    JOptionPane.showMessageDialog(g, "A continuacion se van a dar los resultados del torneo"); 
+    ArrayList<Enfrentamiento> jucesDeLosPartido =new ArrayList<>();
+    
+   
+   for (int i = 0; i < juecesTotal.size(); i++) {
 
+       String  juecesAux=juecesTotal.get(i).getLicencia();
+        
+
+        for (int j = 0; j < juecesAux.size(); j++) {
+            if(enfrentamientos.get(i).getjuecespartido().contains(currentlicencia)) {
+                juecesPorPartido.add(juecesAux);
+            }
+            
+            
+        }
+
+     JOptionPane.showMessageDialog(g, juecesPorPartido);    
+   }
+}
 @Override
 public int compare(Equipo o1, Equipo o2) {
     // TODO Auto-generated method stub
